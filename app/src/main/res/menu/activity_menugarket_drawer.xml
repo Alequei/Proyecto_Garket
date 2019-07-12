@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/solicitud_avisos"
+            android:icon="@drawable/avisos"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/o_t_programadas"
+            android:icon="@drawable/programadas"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/visualizar_avisos"
+            android:icon="@drawable/visualizaravisos"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/visualizar_orden"
+            android:icon="@drawable/visualizarorden"
+            android:title="@string/menu_tools" />
+        <item
+            android:id="@+id/indicadores"
+            android:icon="@drawable/indicadores"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/registrar"
+            android:icon="@drawable/registrar"
+            android:title="@string/menu_send" />
+    </group>
+
+    <item android:title="Opciones">
+        <menu>
+            <item
+                android:id="@+id/nav_close"
+                android:icon="@drawable/salir"
+                android:title="@string/menu_salir" />
+        </menu>
+    </item>
+
+</menu>

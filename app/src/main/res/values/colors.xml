@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlanco">#E9E9E9</color>
+    <color name="color">#050505</color>
+    <color name="colorBlancoT">#4DE9E9E9</color>
+    <color name="colorGarket">#FFB300</color>
+
+<!--Colores para garket-->
+    <color name="colorSolicitud">#FFB300</color>
+    <color name="colorProgramada">#039BE5</color>
+    <color name="colorAviso">#E53935</color>
+    <color name="colorOrdenes">#512DA8</color>
+    <color name="colorincicadores">#2E7D32</color>
+    <color name="colorRegistrar">#D84315</color>
+</resources>
