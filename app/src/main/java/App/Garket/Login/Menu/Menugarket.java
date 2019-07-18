@@ -23,7 +23,7 @@ import App.Garket.Login.Fragmentos.Registro_de_Equipos;
 import App.Garket.Login.Fragmentos.Solicitud_de_Aviso;
 import App.Garket.Login.Fragmentos.Visualizar_Avisos;
 import App.Garket.Login.Fragmentos.Visualizar_Ordenes;
-import App.Garket.Login.Login;
+import App.Garket.Login.Logeo;
 import App.Garket.Login.R;
 
 public class Menugarket extends AppCompatActivity
@@ -109,7 +109,7 @@ public class Menugarket extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.mainlayout,new Registro_de_Equipos()).commit();
         }
         else if (id == R.id.nav_close) {
-            Intent loginactivity=new Intent(this, Login.class);
+            Intent loginactivity=new Intent(this, Logeo.class);
 
             startActivity(loginactivity);
 

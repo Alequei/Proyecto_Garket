@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.0"
     defaultConfig {
-        applicationId "App.Garket.Login"
+        applicationId "App.Garket.ApiServiceLogin"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -28,4 +28,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //Implementacion para  trabajar con api
+    implementation 'com.android.support:gridlayout-v7:28.0.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
 }
