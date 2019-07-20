@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import App.Garket.Login.R;
 
@@ -14,7 +15,7 @@ import App.Garket.Login.R;
  */
 public class Solicitud_de_Aviso extends Fragment {
 
-
+    ImageView foto_codigo,close;
     public Solicitud_de_Aviso() {
         // Required empty public constructor
     }
@@ -23,8 +24,19 @@ public class Solicitud_de_Aviso extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_solicitud_de__aviso, container, false);
+        View view;
+        view=inflater.inflate(R.layout.fragment_solicitud_de__aviso, container, false);
+        foto_codigo=view.findViewById(R.id.imagenplacaid);
+
+        foto_codigo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogDetector dialogDetector=new DialogDetector();
+                dialogDetector.show(getFragmentManager(),"Dialogo Detector");
+            }
+        });
+
+        return view;
     }
 
 }

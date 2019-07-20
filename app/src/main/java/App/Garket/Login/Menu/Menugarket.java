@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,7 +16,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageView;
 
+import App.Garket.Login.Fragmentos.DialogSecurity;
 import App.Garket.Login.Fragmentos.Indicadores;
 import App.Garket.Login.Fragmentos.OT_Programada;
 import App.Garket.Login.Fragmentos.Principal;
@@ -28,13 +31,15 @@ import App.Garket.Login.R;
 
 public class Menugarket extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private ImageView garket;
+    private static final String TAG = "Menugarket";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menugarket);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        garket=(ImageView)findViewById(R.id.imageGarket);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.mainlayout,new Principal()).commit();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -65,18 +70,10 @@ public class Menugarket extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        return true;
         }
 
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -85,7 +82,6 @@ public class Menugarket extends AppCompatActivity
 
         if (id == R.id.solicitud_avisos) {
             getSupportActionBar().setTitle("Solicitud de avisos");
-
             getSupportFragmentManager().beginTransaction().replace(R.id.mainlayout,new Solicitud_de_Aviso()).commit();
         } else if (id == R.id.o_t_programadas) {
             getSupportActionBar().setTitle("O/T Programadas");
@@ -104,9 +100,13 @@ public class Menugarket extends AppCompatActivity
 
             getSupportFragmentManager().beginTransaction().replace(R.id.mainlayout,new Indicadores()).commit();
         } else if (id == R.id.registrar) {
-            getSupportActionBar().setTitle("Registrar equipo");
+            getSupportActionBar().setTitle("Registro de equipo");
+            DialogSecurity dialogSecurity=new DialogSecurity();
+            dialogSecurity.show(getSupportFragmentManager(),"Dialog Security");
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainlayout,new Registro_de_Equipos()).commit();
+
+        }else if(id == R.id.imageGarket){
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainlayout,new Principal()).commit();
         }
         else if (id == R.id.nav_close) {
             Intent loginactivity=new Intent(this, Logeo.class);
@@ -115,6 +115,7 @@ public class Menugarket extends AppCompatActivity
 
             finish();
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
