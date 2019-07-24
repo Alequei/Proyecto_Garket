@@ -31,13 +31,12 @@ public class DialogSecurity extends DialogFragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG,"Onclick:captura input");
-                String validacion=codigo.getText().toString();
-                getDialog().dismiss();
                 FragmentManager fragmentManager = getFragmentManager();
-                   fragmentManager.beginTransaction().replace(R.id.mainlayout ,new Registro_de_Equipos()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.mainlayout, new ListadorDeRegistro()).commit();
+                    getDialog().dismiss();
 
+                }
 
-            }
         });
 
 

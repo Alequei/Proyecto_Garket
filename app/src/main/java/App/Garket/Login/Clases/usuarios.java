@@ -1,6 +1,6 @@
 package App.Garket.Login.Clases;
 
-public abstract class usuarios {
+public  class usuarios {
 
 
     private String apellido;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -66,9 +67,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:orientation="vertical">
-                <Spinner
+                <EditText
                     android:layout_marginStart="20dp"
-                    android:id="@+id/spinner"
+                    android:id="@+id/equipo"
                     android:layout_marginTop="15dp"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
@@ -100,6 +101,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/observacionid"
                     android:layout_width="350dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="20dp"
@@ -108,27 +110,44 @@
                     android:inputType="textMultiLine"
                     android:textColorHint="@color/colorBlack" />
             </LinearLayout>
-
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:orientation="vertical"/>
+                >
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/btnRegistrar"
+                    app:layout_constraintStart_toStartOf="@+id/btnRegistrar"
+                    app:layout_constraintTop_toTopOf="@+id/btnRegistrar" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="-15dp"/>
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="200dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"/>
+                    android:background="@drawable/boton_solicitud"
+                    android:inputType="textMultiLine"
+                    android:text="Guardar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-
+            </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
+
+
     </ScrollView>
+
+
 </FrameLayout>

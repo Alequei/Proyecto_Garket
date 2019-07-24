@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import App.Garket.Login.R;
 
+
 public class DialogDetector extends DialogFragment {
     private static final String TAG = "DialogSecurity";
     ImageView close;

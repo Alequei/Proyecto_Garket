@@ -25,7 +25,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"/>
         <TextView
-            android:id="@+id/dialog_nombre"
+            android:id="@+id/dialog_ubicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ubicacion"
@@ -35,7 +35,7 @@
             android:textSize="24sp"
             />
         <TextView
-            android:id="@+id/dialog_placa"
+            android:id="@+id/dialog_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -81,7 +81,7 @@
                 android:text="15:30 pm"/>
 
             <TextView
-                android:id="@+id/dialog_turnofecha"
+                android:id="@+id/dialog_fechaI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"

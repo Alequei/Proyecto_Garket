@@ -1,0 +1,73 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="App.Garket.Login.Fragmentos.Ocr">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/cameraButton"
+            android:layout_width="108dp"
+            android:layout_height="72dp"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="87dp"
+            android:background="#B1C8D6"
+            android:src="@drawable/camera" />
+
+        <ImageButton
+            android:id="@+id/detectButton"
+            android:layout_width="108dp"
+            android:layout_height="72dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="288dp"
+            android:layout_marginBottom="87dp"
+            android:background="#B1C8D6"
+            android:src="@drawable/ic_format_color_text_black_24dp" />
+
+        <ImageView
+            android:id="@+id/mImageView"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/icono"
+            android:layout_marginEnd="0dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+        android:id="@+id/textView"
+        android:layout_width="403dp"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="185dp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="20dp"
+            android:textColor="@color/color"
+            android:layout_marginBottom="310dp"
+            android:text="Recononocedor de  texto" />
+    </RelativeLayout>
+</FrameLayout>

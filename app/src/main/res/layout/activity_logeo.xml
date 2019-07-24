@@ -120,21 +120,37 @@
                     android:layout_marginTop="-9dp"
                     android:src="@color/colorGarket"/>
             </LinearLayout>
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_marginTop="60dp"
                 android:layout_width="wrap_content"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/logeo"
+                    app:layout_constraintEnd_toEndOf="@+id/logeo"
+                    app:layout_constraintStart_toStartOf="@+id/logeo"
+                    app:layout_constraintTop_toTopOf="@+id/logeo" />
+
                 <Button
                     android:id="@+id/logeo"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
+                    android:background="@drawable/boton_ingresar"
                     android:text="Ingresar"
-                    android:textColor="@color/color"
                     android:textAllCaps="false"
-                    android:background="@drawable/boton_ingresar" />
-            </LinearLayout>
+                    android:textColor="@color/color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
