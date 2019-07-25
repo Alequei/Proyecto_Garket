@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:background="@color/colorBlack"
-    tools:context=".Logeo">
+    tools:context=".Registrar_Usuario">
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Inicio de  Session"
+                    android:text="Registrando Usuario"
                     android:textSize="20sp"
                     android:gravity="center"
                     android:textColor="@color/colorBlanco"/>
@@ -121,6 +121,70 @@
                     android:layout_marginTop="-9dp"
                     android:src="@color/colorGarket"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="160dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_user" />
+                    <EditText
+                        android:id="@+id/nombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingrese nombre"
+                        android:inputType="text"
+                        android:textSize="16dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorBlanco"
+                        android:outlineSpotShadowColor="@color/colorBlanco"
+                        android:textColorHint="@color/colorBlanco"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="-9dp"
+                    android:src="@color/colorGarket"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="160dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_lock" />
+                    <EditText
+                        android:id="@+id/apellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingrese Apellido"
+                        android:textColor="@color/colorBlanco"
+
+                        android:textSize="16dp"
+                        android:gravity="center"
+                        android:textColorHint="@color/colorBlanco"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="-9dp"
+                    android:src="@color/colorGarket"/>
+            </LinearLayout>
             <android.support.constraint.ConstraintLayout
                 android:layout_marginTop="60dp"
                 android:layout_width="wrap_content"
@@ -155,3 +219,4 @@
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
+

@@ -3,6 +3,7 @@ package App.Garket.Login.Menu;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -17,6 +18,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import App.Garket.Login.Fragmentos.DialogSecurity;
 import App.Garket.Login.Fragmentos.Indicadores;
@@ -31,6 +40,11 @@ import App.Garket.Login.R;
 
 public class Menugarket extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseUser currentuser;
+    FirebaseAuth auth;
+    private TextView nombrecorreo;
+    private TextView nombre;
+    private GoogleApiClient googleApiClient;
     private ImageView garket;
     private static final String TAG = "Menugarket";
     @Override
@@ -40,15 +54,20 @@ public class Menugarket extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         garket=(ImageView)findViewById(R.id.imageGarket);
+        nombrecorreo=(TextView)findViewById(R.id.correo);
+        nombre=(TextView)findViewById(R.id.nombre);
+        //Varialbes de Firebase
+        auth=FirebaseAuth.getInstance();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.mainlayout,new Principal()).commit();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        updateNavHeader();
     }
 
     @Override
@@ -121,4 +140,25 @@ public class Menugarket extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void updateNavHeader(){
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView=navigationView.getHeaderView(0);
+        TextView navUsername=headerView.findViewById(R.id.nombre);
+        TextView navUserEmail=headerView.findViewById(R.id.correo);
+        navUserEmail.setText(currentuser.getEmail());
+
+        navUsername.setText(currentuser.getDisplayName());
+         garket.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 FragmentManager fragmentManager = getSupportFragmentManager();
+                 fragmentManager.beginTransaction().replace(R.id.mainlayout,new Principal()).commit();
+             }
+         });
+        //Ahora usaremos Glide para cargar la imagen del usuario.
+        //Primero necesitamos importar la biblioteca.
+
+    }
+
+
 }
